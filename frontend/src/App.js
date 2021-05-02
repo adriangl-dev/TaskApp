@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar.component";
 import TaskList from './components/tasklist.component';
 import CreateTask from './components/create-task.component';
+import EditTask from './components/edit-task.component';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <br />
         <Route path="/" exact component={TaskList} />
         <Route path="/create" exact component={CreateTask} />
+        <Route path="/edit/:id" exact component={EditTask} />
       </Router>
     </div>
   );

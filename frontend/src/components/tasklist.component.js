@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -25,7 +26,6 @@ export default class TaskList extends Component {
     axios.get('http://localhost:3001/tasklist/')
       .then(response => {
         this.setState({ tasks: response.data })
-        console.log(this.state);
       })
       .catch((error) => {
         console.log(error);
