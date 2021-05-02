@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import DateFormat from 'moment';
 
 const Task = props => (
   <tr>
     <td>{props.task.title}</td>
     <td>{props.task.description}</td>
-    <td>{props.task.data}</td>
+    <td>{DateFormat(props.task.data).format("DD / MM / YYYY HH:MM:SS")}</td>
     <td>
-      <Link to={"/edit/"+props.task._id}>edit</Link> | <a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}>delete</a>
+      <Link to={"/edit/"+props.task._id}>Editar</Link> | <a href="#" onClick={() => { props.deleteTask(props.task._id) }}>Eliminar</a>
     </td>
   </tr>
 )
@@ -16,9 +17,7 @@ const Task = props => (
 export default class TaskList extends Component {
   constructor(props) {
     super(props);
-
-    this.deleteExercise = this.deleteExercise.bind(this)
-
+    this.deleteTask = this.deleteTask.bind(this);
     this.state = {tasks: []};
   }
 
@@ -26,13 +25,14 @@ export default class TaskList extends Component {
     axios.get('http://localhost:3001/tasklist/')
       .then(response => {
         this.setState({ tasks: response.data })
+        console.log(this.state);
       })
       .catch((error) => {
         console.log(error);
       })
   }
 
-  deleteExercise(id) {
+  deleteTask(id) {
     axios.delete('http://localhost:3001/delete/'+id)
       .then(response => { console.log(response.data)});
 
@@ -43,20 +43,20 @@ export default class TaskList extends Component {
 
   taskList() {
     return this.state.tasks.map(currentTask => {
-      return <Task task={currentTask} deleteExercise={this.deleteExercise} key={currentTask._id}/>;
+      return <Task task={currentTask} deleteTask={this.deleteTask} key={currentTask._id}/>;
     })
   }
 
   render() {
     return (
       <div>
-        <h3>Logged tasks</h3>
+        <h3>Tareas registradas</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>Username</th>
-              <th>Description</th>
-              <th>Date</th>
+              <th>Título</th>
+              <th>Descripción</th>
+              <th>Fecha</th>
             </tr>
           </thead>
           <tbody>
