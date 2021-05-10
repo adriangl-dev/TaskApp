@@ -33,7 +33,7 @@ cd ../frontend
 
 ```bash
 ## Construimos el contenedor para frontend
-docker build -t taskapp-frontend --build-arg CADDYFILE=Caddyfile.local --build-arg BASE_URL=http://localhost:3001/rest .
+docker build -t taskapp-frontend --build-arg CADDYFILE=Caddyfile.local --build-arg BASE_URL=http://localhost/rest .
 ```
 
 ```bash
