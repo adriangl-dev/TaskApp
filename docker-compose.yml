@@ -1,0 +1,28 @@
+version: "3"
+services:
+  taskapp-frontend:
+    image: taskapp-frontend:latest
+    restart: unless-stopped
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      - taskapp
+  taskapp-backend:
+    image: taskapp-backend:latest
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    networks:
+      - taskapp
+networks:
+  taskapp:
+    driver: bridge
+volumes:
+  caddy-data:
+    driver: local
+  caddy-config:
+    driver: local

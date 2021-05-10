@@ -28,10 +28,8 @@ export default class CreateTask extends Component {
             description: this.state.description,
             data: this.state.data
         }
-        axios.post("http://localhost:3001/add", task)
-        .then(res => console.log(res.data));
-
-        window.location = "/";
+        axios.post(process.env.REACT_APP_BASE_URL+"/add", task)
+        .then(res => window.location = "/");
     }
     onChangeTitle(e){
         this.setState({

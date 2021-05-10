@@ -28,13 +28,11 @@ export default class EditTask extends Component {
             description: this.state.description,
             data: this.state.data
         }
-        axios.post("http://localhost:3001/edit/"+this.props.match.params.id, task)
-        .then(res => console.log(res.data));
-
-        window.location = "/";
+        axios.post(process.env.REACT_APP_BASE_URL+"/edit/"+this.props.match.params.id, task)
+        .then(res => window.location = "/");
     }
     componentDidMount(){
-        axios.get("http://localhost:3001/task/"+this.props.match.params.id)
+        axios.get(process.env.REACT_APP_BASE_URL+"/task/"+this.props.match.params.id)
         .then(response => {
             this.setState({
                 title: response.data.title,
