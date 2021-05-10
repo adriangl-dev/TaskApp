@@ -15,7 +15,7 @@ TaskApp consta de las siguientes tecnologías:
 ## Instalación
 ```bash
 ## Descargamos el proyecto
-git clone https://github.com/adriangl-dev/sgved.git 
+git clone https://github.com/adriangl-dev/TaskApp.git
 ```
 
 ```bash
@@ -52,5 +52,11 @@ Accedemos a la URL de local desde el navegador (por defecto puerto 80):
  
 http://localhost/
 
+
+![image](https://user-images.githubusercontent.com/2179475/117713479-003c4680-b1d6-11eb-82c2-146390993958.png)
+
+![image](https://user-images.githubusercontent.com/2179475/117713527-11855300-b1d6-11eb-9a46-d0ef45b44be1.png)
+
+![image](https://user-images.githubusercontent.com/2179475/117713623-2f52b800-b1d6-11eb-90c9-d0e7ee2998b1.png)
 
 
