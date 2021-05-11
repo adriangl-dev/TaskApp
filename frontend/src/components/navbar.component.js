@@ -6,7 +6,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">Lista de tareas</Link>
+        <Link to="/" className="navbar-brand" style={{paddingLeft: "10px"}}>Lista de tareas</Link>
         <div className="collapse navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">

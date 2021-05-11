@@ -51,7 +51,8 @@ export default class TaskList extends Component {
 
   vencimiento(fecha) {
     if(DateFormat(fecha).format("YYYYMMDDHHMMSS") <= DateFormat(new Date()).format("YYYYMMDDHHMMSS")){
-      return <p className="card-text"><small className="alert alert-danger">Tarea vencida!</small></p>;
+      //return <p className="card-text"><small className="alert alert-danger">Tarea vencida!</small></p>;
+      return <span className="badge bg-danger">Tarea vencida!</span>;
     }
   }
 
