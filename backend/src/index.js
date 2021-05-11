@@ -1,8 +1,8 @@
 //dependencias
 const express = require('express');
 const cors = require('cors');
-const { mongoose } = require('./database');
 const env = require('dotenv').config();
+const { mongoose } = require('./database');
 const port = process.env.PORT;
 const helmet = require('helmet');
 const morgan = require('morgan');

@@ -1,0 +1,28 @@
+###
+GET http://localhost:3001/rest/tasklist
+
+###
+GET http://localhost:3001/rest/task/609a6bf319536d6e2c2e4751
+
+###
+POST http://localhost:3001/rest/add/
+Content-Type: application/json
+
+{
+  "title": "Tarea APIREST",
+  "description": "Prueba de tarea APIREST",
+  "data": "2021-05-11T08:07:36.000Z"
+}
+
+###
+POST http://localhost:3001/rest/edit/609a6bf319536d6e2c2e4751
+Content-Type: application/json
+
+{
+    "title": "Tarea APIREST Editada 2",
+    "description": "Prueba de tarea APIREST",
+    "data": "2021-05-11T08:07:36.000Z"
+}
+
+###
+DELETE http://localhost:3001/rest/delete/609a6bf319536d6e2c2e4751
