@@ -7,7 +7,7 @@ TaskApp consta de las siguientes tecnologías:
 - React.JS
 - Bootstrap
 - mongoDB
-- Express.JS
+- Express.JS (RESTful services)
 - Node.JS
 - Caddy
 - Docker
